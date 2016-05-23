@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.framework;
+package org.kaerdan.presenterretainer;
 
 public interface Presenter<T extends Presenter.View> {
 

@@ -1,11 +1,10 @@
 package org.kaerdan.retainpresenter;
 
-
 import org.kaerdan.presenterretainer.Presenter;
 
-public class MainPresenter implements Presenter<Presenter.View> {
+public class FragmentPresenter implements Presenter<Presenter.View> {
 
-    private View view;
+    private Presenter.View view;
     private boolean isLongRunOpStarted;
 
     @Override
