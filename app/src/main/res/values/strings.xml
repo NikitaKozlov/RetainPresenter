@@ -1,9 +1,11 @@
 <resources>
     <string name="app_name">RetainPresenter</string>
-    <string name="title_activity_main2">Main2Activity</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+
+    <string name="first_activity_title"> (1) Single Activity</string>
+    <string name="second_activity_title"> (2) Activity with Fragment</string>
+    <string name="third_activity_title"> (3) Activity with Nested Fragment</string>
+
 </resources>

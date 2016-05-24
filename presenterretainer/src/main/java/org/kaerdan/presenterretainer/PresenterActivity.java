@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-public class PresenterActivity<P extends Presenter, V extends Presenter.View> extends AppCompatActivity {
+public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View> extends AppCompatActivity {
 
     private boolean mRetained;
 
@@ -14,7 +14,7 @@ public class PresenterActivity<P extends Presenter, V extends Presenter.View> ex
         return mPresenterManager.getHostPresenter();
     }
 
-    protected P onPresenterCreated() {
+    protected P onCreatePresenter() {
         return null;
     }
 
@@ -50,7 +50,7 @@ public class PresenterActivity<P extends Presenter, V extends Presenter.View> ex
         P presenter = getPresenter();
 
         if (presenter == null) {
-            presenter = onPresenterCreated();
+            presenter = onCreatePresenter();
             mPresenterManager.setHostPresenter(presenter);
         }
 
@@ -132,7 +132,7 @@ public class PresenterActivity<P extends Presenter, V extends Presenter.View> ex
         return true;
     }
 
-    public PresenterManager<P> getPresenterManager() {
+    PresenterManager<P> getPresenterManager() {
         return mPresenterManager;
     }
 

@@ -1,14 +1,12 @@
-package org.kaerdan.retainpresenter;
+package org.kaerdan.retainpresenter.third;
 
-import org.kaerdan.presenterretainer.Presenter;
+public class ThirdFragmentPresenter implements ThirdFragmentContract.Presenter {
 
-public class FragmentPresenter implements Presenter<Presenter.View> {
-
-    private Presenter.View view;
+    private View view;
     private boolean isLongRunOpStarted;
 
     @Override
-    public void onAttachView(View view) {
+    public void onAttachView(ThirdFragmentContract.View view) {
         this.view = view;
         isLongRunOpStarted = true;
     }
