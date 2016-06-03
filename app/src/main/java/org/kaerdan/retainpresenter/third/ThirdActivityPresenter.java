@@ -1,6 +1,8 @@
 package org.kaerdan.retainpresenter.third;
 
 import org.kaerdan.retainpresenter.first.FirstActivity;
+import org.kaerdan.retainpresenter.fourth.FourthActivity;
+import org.kaerdan.retainpresenter.second.SecondActivity;
 
 public class ThirdActivityPresenter implements ThirdContract.Presenter {
 
@@ -25,12 +27,12 @@ public class ThirdActivityPresenter implements ThirdContract.Presenter {
 
     @Override
     public void onPreviousClick() {
-        view.launchActivity(FirstActivity.class);
+        view.launchActivity(SecondActivity.class);
     }
 
     @Override
     public void onNextClick() {
-        view.launchActivity(ThirdActivity.class);
+        view.launchActivity(FourthActivity.class);
     }
 
     @Override

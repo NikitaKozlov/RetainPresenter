@@ -15,7 +15,7 @@ public class FirstActivity extends PresenterActivity<FirstContract.Presenter, Fi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
-        findViewById(R.id.previous).setVisibility(View.GONE);
+        findViewById(R.id.previous).setVisibility(View.INVISIBLE);
         findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

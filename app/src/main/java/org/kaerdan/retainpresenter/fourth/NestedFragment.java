@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.third;
+package org.kaerdan.retainpresenter.fourth;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,8 +12,8 @@ import org.kaerdan.retainpresenter.R;
 
 import java.util.Random;
 
-public class ThirdFragment extends PresenterFragment<ThirdFragmentPresenter, ThirdFragmentContract.View>
-        implements ThirdFragmentContract.View {
+public class NestedFragment extends PresenterFragment<NestedFragmentPresenter, NestedFragmentContract.View>
+        implements NestedFragmentContract.View {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,12 +34,12 @@ public class ThirdFragment extends PresenterFragment<ThirdFragmentPresenter, Thi
     }
 
     @Override
-    protected ThirdFragmentPresenter onPresenterCreated() {
-        return new ThirdFragmentPresenter();
+    protected NestedFragmentPresenter onPresenterCreated() {
+        return new NestedFragmentPresenter();
     }
 
     @Override
-    protected ThirdFragment getPresenterView() {
+    protected NestedFragment getPresenterView() {
         return this;
     }
 }

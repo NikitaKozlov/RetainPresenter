@@ -5,8 +5,11 @@
     <string name="next">Next</string>
     <string name="replace">Navigate to next fragment(replace)</string>
 
+    <string name="description">Description</string>
+
     <string name="first_activity_title"> (1) Single Activity</string>
     <string name="second_activity_title"> (2) Activity with Fragment</string>
-    <string name="third_activity_title"> (3) Activity with Nested Fragment</string>
+    <string name="third_activity_title"> (3) Activity with Fragment Navigation</string>
+    <string name="fourth_activity_title"> (4) Activity with Nested ViewPager with Fragments</string>
 
 </resources>
