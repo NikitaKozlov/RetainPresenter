@@ -1,28 +1,29 @@
 package org.kaerdan.retainpresenter.second;
 
+import org.kaerdan.retainpresenter.LogPresenter;
 import org.kaerdan.retainpresenter.first.FirstActivity;
 import org.kaerdan.retainpresenter.third.ThirdActivity;
 
-public class SecondActivityPresenter implements SecondContract.Presenter {
+public class SecondActivityPresenter extends LogPresenter<SecondContract.View>
+        implements SecondContract.Presenter {
 
     private SecondContract.View view;
-    private boolean isLongRunOpStarted;
 
     @Override
     public void onAttachView(SecondContract.View view) {
+        super.onAttachView(view);
         this.view = view;
-        isLongRunOpStarted = true;
     }
 
     @Override
     public void onDetachView() {
+        super.onDetachView();
         this.view = null;
     }
 
     @Override
     public void onDestroy() {
-        isLongRunOpStarted = false;
-
+        super.onDestroy();
     }
 
     @Override

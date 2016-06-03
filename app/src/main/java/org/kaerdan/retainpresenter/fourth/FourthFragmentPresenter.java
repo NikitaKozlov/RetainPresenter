@@ -1,26 +1,29 @@
 package org.kaerdan.retainpresenter.fourth;
 
-public class FourthFragmentPresenter implements FourthFragmentContract.Presenter {
+import org.kaerdan.retainpresenter.LogPresenter;
+
+public class FourthFragmentPresenter extends LogPresenter<FourthFragmentContract.View>
+        implements FourthFragmentContract.Presenter {
 
     private static final int PAGE_COUNT = 10;
 
     private View view;
-    private boolean isLongRunOpStarted;
 
     @Override
     public void onAttachView(FourthFragmentContract.View view) {
+        super.onAttachView(view);
         this.view = view;
-        isLongRunOpStarted = true;
         view.showContent(PAGE_COUNT);
     }
 
     @Override
     public void onDetachView() {
+        super.onDetachView();
         this.view = null;
     }
 
     @Override
     public void onDestroy() {
-        isLongRunOpStarted = false;
+        super.onDestroy();
     }
 }

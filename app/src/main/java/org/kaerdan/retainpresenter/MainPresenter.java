@@ -8,7 +8,8 @@ import org.kaerdan.retainpresenter.third.ThirdActivity;
 import java.util.Arrays;
 import java.util.List;
 
-public class MainPresenter implements MainContract.Presenter {
+public class MainPresenter extends LogPresenter<MainContract.View>
+        implements MainContract.Presenter {
 
     private List<Integer> stringIdList = Arrays.asList(R.string.first_activity_title,
             R.string.second_activity_title, R.string.third_activity_title,
@@ -22,17 +23,20 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void onAttachView(MainContract.View view) {
+        super.onAttachView(view);
         this.view = view;
         view.displayButtons(stringIdList);
     }
 
     @Override
     public void onDetachView() {
+        super.onDetachView();
         this.view = null;
     }
 
     @Override
     public void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
