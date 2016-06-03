@@ -6,10 +6,12 @@ import org.kaerdan.retainpresenter.third.ThirdActivity;
 public class SecondActivityPresenter implements SecondContract.Presenter {
 
     private SecondContract.View view;
+    private boolean isLongRunOpStarted;
 
     @Override
     public void onAttachView(SecondContract.View view) {
         this.view = view;
+        isLongRunOpStarted = true;
     }
 
     @Override
@@ -19,6 +21,7 @@ public class SecondActivityPresenter implements SecondContract.Presenter {
 
     @Override
     public void onDestroy() {
+        isLongRunOpStarted = false;
 
     }
 

@@ -59,10 +59,10 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
         if (presenter != null && view != null) {
             presenter.onAttachView(view);
         } else if (presenter == null && view != null) {
-            throw new IllegalStateException("You created a presenter, but didn't provide a " +
-                    "view for it");
+            throw new IllegalStateException("You created a view, but didn't provide a " +
+                    "presenter for it");
         } else if (presenter != null) {
-            throw new IllegalStateException("You provided a view, but didn't create presenter");
+            throw new IllegalStateException("You provided a presenter, but didn't create view");
         }
     }
 

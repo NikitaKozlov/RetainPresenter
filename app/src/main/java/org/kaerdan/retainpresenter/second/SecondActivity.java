@@ -16,10 +16,12 @@ public class SecondActivity extends PresenterActivity<SecondActivityPresenter, S
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(new SecondFragment(), null)
-                .commit();
+        if (savedInstanceState == null) {
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(new SecondFragment(), null)
+                    .commit();
+        }
 
         findViewById(R.id.previous).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,6 +36,11 @@ public class SecondActivity extends PresenterActivity<SecondActivityPresenter, S
                 getPresenter().onNextClick();
             }
         });
+    }
+
+    @Override
+    protected boolean retainPresenter() {
+        return false;
     }
 
     @Override

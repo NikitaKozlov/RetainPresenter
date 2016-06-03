@@ -9,10 +9,12 @@ import java.util.List;
 public class FirstActivityPresenter implements FirstContract.Presenter {
 
     private FirstContract.View view;
+    private boolean isLongRunOpStarted;
 
     @Override
     public void onAttachView(FirstContract.View view) {
         this.view = view;
+        isLongRunOpStarted = true;
     }
 
     @Override
@@ -22,7 +24,7 @@ public class FirstActivityPresenter implements FirstContract.Presenter {
 
     @Override
     public void onDestroy() {
-
+        isLongRunOpStarted = false;
     }
 
     @Override

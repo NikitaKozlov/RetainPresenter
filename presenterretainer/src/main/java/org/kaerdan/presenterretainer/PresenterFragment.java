@@ -101,7 +101,7 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (!retainPresenter()) {
+        if (!retainPresenter() || !getActivity().isChangingConfigurations()) {
             P presenter = getPresenter();
             if (presenter != null) {
                 mPresenterManager.removePresenter(mPresenterUUID);

@@ -38,13 +38,11 @@ public class PresenterManager<HP extends Presenter> {
         }
 
         for (int i = 0; i < mPresenters.size(); i++) {
-            Presenter presenter = mPresenters.get(i);
+            Presenter presenter = mPresenters.get(mPresenters.keyAt(i));
             if (presenter != null) {
                 presenter.onDestroy();
             }
         }
     }
-
-
 
 }

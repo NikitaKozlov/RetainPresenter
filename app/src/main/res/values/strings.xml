@@ -3,6 +3,7 @@
 
     <string name="previous">Previous</string>
     <string name="next">Next</string>
+    <string name="replace">Navigate to next fragment(replace)</string>
 
     <string name="first_activity_title"> (1) Single Activity</string>
     <string name="second_activity_title"> (2) Activity with Fragment</string>

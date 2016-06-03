@@ -4,9 +4,11 @@ public interface ThirdContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {
         void onPreviousClick();
         void onNextClick();
+        void onReplace();
     }
 
     interface View extends org.kaerdan.presenterretainer.Presenter.View {
         void launchActivity(Class<?> cls);
+        void replaceContentFragment();
     }
 }
