@@ -55,4 +55,9 @@ public class MainActivity extends PresenterActivity<MainPresenter, MainContract.
     public void launchActivity(Class<?> cls) {
         startActivity(new Intent(this, cls));
     }
+
+    @Override
+    protected boolean retainPresenter() {
+        return false;
+    }
 }

@@ -140,5 +140,4 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
         Object custom;
         PresenterManager<P> presenterManager;
     }
-    
 }
