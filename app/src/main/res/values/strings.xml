@@ -19,14 +19,14 @@
     <string name="single_fragment_activity_description">Example of retaining presenter for activity
         and fragment inside.</string>
 
-    <string name="fragment_navigation_activity_title">Activity with Fragment Navigation</string>
+    <string name="fragment_navigation_activity_title">Fragment Navigation</string>
     <string name="fragment_navigation_activity_description">Example of retaining presenter only for
         configuration change. When you replace fragment with new one, old presenter is destroyed.
         Fragment has random background color to visualise "navigation".</string>
 
-    <string name="nested_viewpager_activity_title">Fragment with Nested Fragments inside ViewPager</string>
+    <string name="nested_viewpager_activity_title">Nested Fragments inside ViewPager</string>
     <string name="nested_viewpager_activity_description">Example with ViewPager. Activity contains
-        fragment with nested fragments inside layout. Nested fragments has random background color,
+        fragment with nested fragments inside viewpager. Nested fragments has random background color,
         to visualise page changes</string>
 
 </resources>

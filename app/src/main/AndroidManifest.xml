@@ -16,16 +16,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".single_activity.SingleActivity"
-            android:label="@string/single_activity_title"/>
+            android:label="@string/single_activity_title"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".single_fragment.SingleFragmentActivity"
-            android:label="@string/single_fragment_activity_title"/>
+            android:label="@string/single_fragment_activity_title"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".fragment_navigation.FragmentNavigationActivity"
-            android:label="@string/fragment_navigation_activity_title"/>
+            android:label="@string/fragment_navigation_activity_title"
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".nested_viewpager.NestedViewPagerActivity"
-            android:label="@string/nested_viewpager_activity_title"/>
+            android:label="@string/nested_viewpager_activity_title"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

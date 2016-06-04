@@ -15,6 +15,7 @@ public class SingleActivity extends PresenterActivity<SingleActivityContract.Pre
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
     }
 

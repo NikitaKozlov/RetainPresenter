@@ -21,7 +21,7 @@ public class FragmentNavigationActivity extends PresenterActivity<FragmentNaviga
                     .add(R.id.content, new ScreenFragment(), null)
                     .commit();
         }
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
     }
 

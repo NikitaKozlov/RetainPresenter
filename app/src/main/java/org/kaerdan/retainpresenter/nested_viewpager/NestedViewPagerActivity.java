@@ -21,7 +21,7 @@ public class NestedViewPagerActivity extends PresenterActivity<NestedViewPagerAc
                     .add(R.id.content, new ViewPagerFragment(), null)
                     .commit();
         }
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
     }
 

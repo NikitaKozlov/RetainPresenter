@@ -21,7 +21,7 @@ public class SingleFragmentActivity extends PresenterActivity<SingleFragmentActi
                     .add(R.id.content, new SingleFragment(), null)
                     .commit();
         }
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         initViews();
     }
 
