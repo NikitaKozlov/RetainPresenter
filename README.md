@@ -5,12 +5,10 @@ In case you don't know what Presenter is check [MVP](https://en.wikipedia.org/wi
 
 ## Example
 You can find an example in `app` module. They you can find following cases:
-1. *Single Activity*: Retaining presenter for activity without
-        fragments.
-2. *Activity with Fragment*: Retaining presenter for activity
-        and fragment inside.
-3. *Fragment Navigation*: Retaining presenter for
-        navigation with fragments. When you replace fragment with new one, old presenter is destroyed.
+
+1. *Single Activity*: Retaining presenter for activity without fragments.
+2. *Activity with Fragment*: Retaining presenter for activity and fragment inside.
+3. *Fragment Navigation*: Retaining presenter for navigation with fragments. When you replace fragment with new one, old presenter is destroyed.
 4. *Nested Fragments inside ViewPager* Activity contains fragment with nested fragments inside viewpager.
 
 
