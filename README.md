@@ -31,17 +31,12 @@ __NB__ Activity which holds `PresenterFragment` __must__ extends `PresenterActiv
 
 ## Downloads
 
-Right now library available on in my own repo. Soon will be in jcenter as well.
-```groovy
-repositories {
-        maven {
-            url  "https://dl.bintray.com/nikita-kozlov/maven"
-        }
-    }
-```
 ```groovy
 dependencies {
     compile 'org.kaerdan.presenterretainer:presenterretainer:0.1.1'
 }
 ```
 
+## License
+
+The MIT License (MIT)
