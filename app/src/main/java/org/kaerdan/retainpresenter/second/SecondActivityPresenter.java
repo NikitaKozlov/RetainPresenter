@@ -1,7 +1,7 @@
 package org.kaerdan.retainpresenter.second;
 
 import org.kaerdan.retainpresenter.LogPresenter;
-import org.kaerdan.retainpresenter.first.FirstActivity;
+import org.kaerdan.retainpresenter.single_activity.SingleActivity;
 import org.kaerdan.retainpresenter.third.ThirdActivity;
 
 public class SecondActivityPresenter extends LogPresenter<SecondContract.View>
@@ -28,7 +28,7 @@ public class SecondActivityPresenter extends LogPresenter<SecondContract.View>
 
     @Override
     public void onPreviousClick() {
-        view.launchActivity(FirstActivity.class);
+        view.launchActivity(SingleActivity.class);
     }
 
     @Override

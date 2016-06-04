@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.fourth;
+package org.kaerdan.retainpresenter.nested_viewpager;
 
 import android.graphics.Color;
 import android.os.Bundle;

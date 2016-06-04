@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.fourth;
+package org.kaerdan.retainpresenter.nested_viewpager;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

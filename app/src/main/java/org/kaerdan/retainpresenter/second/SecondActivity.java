@@ -2,12 +2,10 @@ package org.kaerdan.retainpresenter.second;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import org.kaerdan.presenterretainer.PresenterActivity;
 import org.kaerdan.retainpresenter.R;
-import org.kaerdan.retainpresenter.first.FirstContract;
 
 public class SecondActivity extends PresenterActivity<SecondActivityPresenter, SecondContract.View>
     implements SecondContract.View {

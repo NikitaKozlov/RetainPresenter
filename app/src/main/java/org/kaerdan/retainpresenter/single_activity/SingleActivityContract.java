@@ -1,6 +1,6 @@
-package org.kaerdan.retainpresenter.first;
+package org.kaerdan.retainpresenter.single_activity;
 
-public interface FirstContract {
+public interface SingleActivityContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {
         void onNextClick();
     }

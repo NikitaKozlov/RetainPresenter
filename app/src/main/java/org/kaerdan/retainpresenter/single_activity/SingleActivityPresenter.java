@@ -1,19 +1,15 @@
-package org.kaerdan.retainpresenter.first;
-
-import android.util.Log;
+package org.kaerdan.retainpresenter.single_activity;
 
 import org.kaerdan.retainpresenter.LogPresenter;
 import org.kaerdan.retainpresenter.second.SecondActivity;
 
-import java.util.logging.Logger;
+public class SingleActivityPresenter extends LogPresenter<SingleActivityContract.View>
+        implements SingleActivityContract.Presenter {
 
-public class FirstActivityPresenter extends LogPresenter<FirstContract.View>
-        implements FirstContract.Presenter {
-
-    private FirstContract.View view;
+    private SingleActivityContract.View view;
 
     @Override
-    public void onAttachView(FirstContract.View view) {
+    public void onAttachView(SingleActivityContract.View view) {
         super.onAttachView(view);
         this.view = view;
     }

@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.fourth;
+package org.kaerdan.retainpresenter.nested_viewpager;
 
 public interface FourthContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {

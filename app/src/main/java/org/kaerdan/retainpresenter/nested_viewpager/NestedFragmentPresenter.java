@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.fourth;
+package org.kaerdan.retainpresenter.nested_viewpager;
 
 import org.kaerdan.retainpresenter.LogPresenter;
 

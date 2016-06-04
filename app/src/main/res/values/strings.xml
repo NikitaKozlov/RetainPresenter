@@ -7,7 +7,10 @@
 
     <string name="description">Description</string>
 
-    <string name="first_activity_title"> (1) Single Activity</string>
+    <string name="single_activity_title">Single Activity</string>
+    <string name="single_activity_description">Example of retaining presenter for activity without
+        fragments</string>
+
     <string name="second_activity_title"> (2) Activity with Fragment</string>
     <string name="third_activity_title"> (3) Activity with Fragment Navigation</string>
     <string name="fourth_activity_title"> (4) Activity with Nested ViewPager with Fragments</string>

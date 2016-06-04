@@ -1,7 +1,7 @@
 package org.kaerdan.retainpresenter.third;
 
 import org.kaerdan.retainpresenter.LogPresenter;
-import org.kaerdan.retainpresenter.fourth.FourthActivity;
+import org.kaerdan.retainpresenter.nested_viewpager.FourthActivity;
 import org.kaerdan.retainpresenter.second.SecondActivity;
 
 public class ThirdActivityPresenter extends LogPresenter<ThirdContract.View>
