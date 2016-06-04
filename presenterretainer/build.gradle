@@ -23,3 +23,31 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
 }
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'presenterretainer'
+
+    publishedGroupId = 'org.kaerdan.presenterretainer'
+    libraryName = 'PresenterRetainer'
+    artifact = 'presenterretainer'
+
+    libraryDescription = 'Retain Presenter on rotation with very little overhead'
+
+    siteUrl = 'https://github.com/NikitaKozlov/Retain-Presenter-on-rotaion'
+    gitUrl = 'https://github.com/NikitaKozlov/Retain-Presenter-on-rotaion.git'
+
+    libraryVersion = '0.1'
+
+    developerId = 'NikitaKozlov'
+    developerName = 'Nikita Kozlov'
+    developerEmail = 'nikita.e.kozlov@gmail.com'
+
+    licenseName = 'The MIT License'
+    licenseUrl = 'https://opensource.org/licenses/MIT'
+    allLicenses = ["MIT"]
+}
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
