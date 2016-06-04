@@ -34,7 +34,7 @@ public class ThirdFragment extends PresenterFragment<ThirdFragmentPresenter, Thi
     }
 
     @Override
-    protected ThirdFragmentPresenter onPresenterCreated() {
+    protected ThirdFragmentPresenter onCreatePresenter() {
         return new ThirdFragmentPresenter();
     }
 

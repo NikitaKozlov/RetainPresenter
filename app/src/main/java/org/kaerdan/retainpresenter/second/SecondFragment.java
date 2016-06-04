@@ -34,7 +34,7 @@ public class SecondFragment extends PresenterFragment<SecondFragmentPresenter, S
     }
 
     @Override
-    protected SecondFragmentPresenter onPresenterCreated() {
+    protected SecondFragmentPresenter onCreatePresenter() {
         return new SecondFragmentPresenter();
     }
 

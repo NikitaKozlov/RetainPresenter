@@ -10,16 +10,50 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
 
     private PresenterManager<P> mPresenterManager;
 
+    /**
+     * Provides presenter.
+     * @return Presenter if it was created.
+     *         null otherwise.
+     */
     protected P getPresenter() {
         return mPresenterManager.getHostPresenter();
     }
 
+    /**
+     * Called after presenter restored. Called before {@link #onCreate(Bundle)}.
+     * View is not attached to presenter at this moment.
+     */
+    protected void onPresenterRestored() {
+
+    }
+
+    /**
+     * Method to instantiate presenter. Called during {@link #onStart()}
+     * @return new Presenter.
+     *         null if {@link #getPresenterView()} returns null.
+     *         Otherwise {@link IllegalStateException} will be thrown.
+     */
     protected P onCreatePresenter() {
         return null;
     }
 
+    /**
+     * Method to instantiate Presenter.View for presenter. Called during {@link #onStart()}
+     * @return View for presenter.
+     *         null if {@link #onCreatePresenter()} returns null.
+     *         Otherwise {@link IllegalStateException} will be thrown.
+     */
     protected V getPresenterView() {
         return null;
+    }
+
+    /**
+     * Indicates if presenter should be kept or not.
+     * @return true if presenter should be retained, false otherwise.
+     *         Default value is true
+     */
+    protected boolean retainPresenter() {
+        return true;
     }
 
     @Override
@@ -114,23 +148,25 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
         return null;
     }
 
+
+    /**
+     * Use this instead of {@link #onRetainCustomNonConfigurationInstance()}}.
+     * Retrieve later with {@link #getLastCustomNonConfigurationObject()}.
+     */
     public Object onRetainCustomNonConfigurationObject() {
         return null;
     }
 
+    /**
+     * Return the value previously returned from
+     * {@link #getLastCustomNonConfigurationInstance()}
+     */
     public Object getLastCustomNonConfigurationObject() {
         NonConfigurationInstances<P> nci =
                 (NonConfigurationInstances<P>) getLastCustomNonConfigurationInstance();
         return nci != null ? nci.custom : null;
     }
 
-    protected void onPresenterRestored() {
-
-    }
-
-    protected boolean retainPresenter() {
-        return true;
-    }
 
     PresenterManager<P> getPresenterManager() {
         return mPresenterManager;

@@ -20,7 +20,7 @@ public class FourthFragment extends PresenterFragment<FourthFragmentPresenter, F
     }
 
     @Override
-    protected FourthFragmentPresenter onPresenterCreated() {
+    protected FourthFragmentPresenter onCreatePresenter() {
         return new FourthFragmentPresenter();
     }
 

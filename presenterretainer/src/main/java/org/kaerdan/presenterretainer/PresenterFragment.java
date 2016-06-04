@@ -15,6 +15,12 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
 
     private PresenterManager mPresenterManager;
 
+
+    /**
+     * Provides presenter.
+     * @return Presenter if it was created.
+     *         null otherwise.
+     */
     protected P getPresenter() {
         if (mPresenterUUID != null) {
             return (P) mPresenterManager.getPresenter(mPresenterUUID);
@@ -22,12 +28,41 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
         return null;
     }
 
-    protected P onPresenterCreated() {
+    /**
+     * Called after presenter restored. Called before {@link #onCreate(Bundle)}.
+     * View is not attached to presenter at this moment.
+     */
+    protected void onPresenterRestored() {
+
+    }
+
+    /**
+     * Method to instantiate presenter. Called during {@link #onStart()}
+     * @return new Presenter.
+     *         null if {@link #getPresenterView()} returns null.
+     *         Otherwise {@link IllegalStateException} will be thrown.
+     */
+    protected P onCreatePresenter() {
         return null;
     }
 
+    /**
+     * Method to instantiate Presenter.View for presenter. Called during {@link #onStart()}
+     * @return View for presenter.
+     *         null if {@link #onCreatePresenter()} returns null.
+     *         Otherwise {@link IllegalStateException} will be thrown.
+     */
     protected V getPresenterView() {
         return null;
+    }
+
+    /**
+     * Indicates if presenter should be kept or not.
+     * @return true if presenter should be retained, false otherwise.
+     *         Default value is true
+     */
+    protected boolean retainPresenter() {
+        return true;
     }
 
     @Override
@@ -40,8 +75,8 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         onRestoreState(savedInstanceState);
+        super.onCreate(savedInstanceState);
     }
 
     private void onRestoreState(@Nullable Bundle savedInstanceState)  {
@@ -52,10 +87,6 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
                 onPresenterRestored();
             }
         }
-    }
-
-    protected void onPresenterRestored() {
-
     }
 
     @Override
@@ -69,7 +100,7 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
         P presenter = getPresenter();
 
         if (presenter == null) {
-            presenter = onPresenterCreated();
+            presenter = onCreatePresenter();
             mPresenterUUID = mPresenterManager.addPresenter(presenter);
         }
 
@@ -120,9 +151,5 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
     public void onDetach() {
         super.onDetach();
         mPresenterManager = null;
-    }
-
-    protected boolean retainPresenter() {
-        return true;
     }
 }

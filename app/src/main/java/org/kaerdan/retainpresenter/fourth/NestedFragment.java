@@ -34,7 +34,7 @@ public class NestedFragment extends PresenterFragment<NestedFragmentPresenter, N
     }
 
     @Override
-    protected NestedFragmentPresenter onPresenterCreated() {
+    protected NestedFragmentPresenter onCreatePresenter() {
         return new NestedFragmentPresenter();
     }
 
