@@ -37,7 +37,7 @@ ext {
     siteUrl = 'https://github.com/NikitaKozlov/Retain-Presenter-on-rotaion'
     gitUrl = 'https://github.com/NikitaKozlov/Retain-Presenter-on-rotaion.git'
 
-    libraryVersion = '0.1'
+    libraryVersion = '0.1.1'
 
     developerId = 'NikitaKozlov'
     developerName = 'Nikita Kozlov'

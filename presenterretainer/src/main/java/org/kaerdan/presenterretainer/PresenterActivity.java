@@ -158,8 +158,8 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
     }
 
     /**
-     * Return the value previously returned from
-     * {@link #getLastCustomNonConfigurationInstance()}
+     * @return value previously returned from
+     *         {@link #onRetainCustomNonConfigurationObject()}
      */
     public Object getLastCustomNonConfigurationObject() {
         NonConfigurationInstances<P> nci =
