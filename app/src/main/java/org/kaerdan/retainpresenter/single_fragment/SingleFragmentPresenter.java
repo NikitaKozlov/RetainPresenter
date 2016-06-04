@@ -1,15 +1,15 @@
-package org.kaerdan.retainpresenter.second;
+package org.kaerdan.retainpresenter.single_fragment;
 
 import org.kaerdan.presenterretainer.Presenter;
 import org.kaerdan.retainpresenter.LogPresenter;
 
-public class SecondFragmentPresenter extends LogPresenter<SecondFragmentContract.View>
-        implements SecondFragmentContract.Presenter {
+public class SingleFragmentPresenter extends LogPresenter<SingleFragmentContract.View>
+        implements SingleFragmentContract.Presenter {
 
     private Presenter.View view;
 
     @Override
-    public void onAttachView(SecondFragmentContract.View view) {
+    public void onAttachView(SingleFragmentContract.View view) {
         super.onAttachView(view);
         this.view = view;
     }

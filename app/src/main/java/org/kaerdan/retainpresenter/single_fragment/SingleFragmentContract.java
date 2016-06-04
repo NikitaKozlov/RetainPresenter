@@ -1,6 +1,6 @@
-package org.kaerdan.retainpresenter.third;
+package org.kaerdan.retainpresenter.single_fragment;
 
-public interface ThirdFragmentContract {
+public interface SingleFragmentContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {
     }
 

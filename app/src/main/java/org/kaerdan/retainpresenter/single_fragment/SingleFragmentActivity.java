@@ -1,14 +1,15 @@
-package org.kaerdan.retainpresenter.nested_viewpager;
+package org.kaerdan.retainpresenter.single_fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import org.kaerdan.presenterretainer.PresenterActivity;
 import org.kaerdan.retainpresenter.R;
 
-public class FourthActivity extends PresenterActivity<FourthActivityPresenter, FourthContract.View>
-    implements FourthContract.View {
+public class SingleFragmentActivity extends PresenterActivity<SingleFragmentActivityPresenter, SingleFragmentActivityContract.View>
+    implements SingleFragmentActivityContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +18,15 @@ public class FourthActivity extends PresenterActivity<FourthActivityPresenter, F
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.content, new FourthFragment(), null)
+                    .add(R.id.content, new SingleFragment(), null)
                     .commit();
         }
+
+        initViews();
+    }
+
+    private void initViews() {
+        ((TextView) findViewById(R.id.description)).setText(R.string.single_fragment_activity_description);
 
         findViewById(R.id.previous).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +35,12 @@ public class FourthActivity extends PresenterActivity<FourthActivityPresenter, F
             }
         });
 
-        findViewById(R.id.next).setVisibility(View.INVISIBLE);
+        findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getPresenter().onNextClick();
+            }
+        });
     }
 
     @Override
@@ -37,12 +49,12 @@ public class FourthActivity extends PresenterActivity<FourthActivityPresenter, F
     }
 
     @Override
-    protected FourthActivityPresenter onCreatePresenter() {
-        return new FourthActivityPresenter();
+    protected SingleFragmentActivityPresenter onCreatePresenter() {
+        return new SingleFragmentActivityPresenter();
     }
 
     @Override
-    protected FourthContract.View getPresenterView() {
+    protected SingleFragmentActivityContract.View getPresenterView() {
         return this;
     }
 

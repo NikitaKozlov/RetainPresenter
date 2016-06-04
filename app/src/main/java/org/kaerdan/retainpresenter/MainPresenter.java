@@ -1,9 +1,9 @@
 package org.kaerdan.retainpresenter;
 
 import org.kaerdan.retainpresenter.single_activity.SingleActivity;
-import org.kaerdan.retainpresenter.nested_viewpager.FourthActivity;
-import org.kaerdan.retainpresenter.second.SecondActivity;
-import org.kaerdan.retainpresenter.third.ThirdActivity;
+import org.kaerdan.retainpresenter.nested_viewpager.NestedViewPagerActivity;
+import org.kaerdan.retainpresenter.single_fragment.SingleFragmentActivity;
+import org.kaerdan.retainpresenter.fragment_navigation.FragmentNavigationActivity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -12,11 +12,11 @@ public class MainPresenter extends LogPresenter<MainContract.View>
         implements MainContract.Presenter {
 
     private List<Integer> stringIdList = Arrays.asList(R.string.single_activity_title,
-            R.string.second_activity_title, R.string.third_activity_title,
-            R.string.fourth_activity_title);
+            R.string.single_fragment_activity_title, R.string.fragment_navigation_activity_title,
+            R.string.nested_viewpager_activity_title);
 
     private List<Class<?>> activityClsList = Arrays.<Class<?>>asList(SingleActivity.class,
-            SecondActivity.class, ThirdActivity.class, FourthActivity.class);
+            SingleFragmentActivity.class, FragmentNavigationActivity.class, NestedViewPagerActivity.class);
 
     private MainContract.View view;
 

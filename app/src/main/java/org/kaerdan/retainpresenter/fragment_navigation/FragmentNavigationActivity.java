@@ -1,27 +1,32 @@
-package org.kaerdan.retainpresenter.third;
+package org.kaerdan.retainpresenter.fragment_navigation;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import org.kaerdan.presenterretainer.PresenterActivity;
 import org.kaerdan.retainpresenter.R;
-import org.kaerdan.retainpresenter.second.SecondActivityPresenter;
-import org.kaerdan.retainpresenter.second.SecondContract;
 
-public class ThirdActivity extends PresenterActivity<ThirdActivityPresenter, ThirdContract.View>
-    implements ThirdContract.View {
+public class FragmentNavigationActivity extends PresenterActivity<FragmentNavigationActivityPresenter, FragmentNavigationActivityContract.View>
+    implements FragmentNavigationActivityContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_third);
+        setContentView(R.layout.activity_fragment_navigation);
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(R.id.content, new ThirdFragment(), null)
+                    .add(R.id.content, new ScreenFragment(), null)
                     .commit();
         }
+
+        initViews();
+    }
+
+    private void initViews() {
+        ((TextView) findViewById(R.id.description)).setText(R.string.fragment_navigation_activity_description);
 
         findViewById(R.id.previous).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,12 +56,12 @@ public class ThirdActivity extends PresenterActivity<ThirdActivityPresenter, Thi
     }
 
     @Override
-    protected ThirdActivityPresenter onCreatePresenter() {
-        return new ThirdActivityPresenter();
+    protected FragmentNavigationActivityPresenter onCreatePresenter() {
+        return new FragmentNavigationActivityPresenter();
     }
 
     @Override
-    protected ThirdContract.View getPresenterView() {
+    protected FragmentNavigationActivityContract.View getPresenterView() {
         return this;
     }
 
@@ -64,7 +69,7 @@ public class ThirdActivity extends PresenterActivity<ThirdActivityPresenter, Thi
     public void replaceContentFragment() {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content, new ThirdFragment(), null)
+                .replace(R.id.content, new ScreenFragment(), null)
                 .commit();
     }
 }

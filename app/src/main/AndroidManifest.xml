@@ -18,14 +18,14 @@
         <activity android:name=".single_activity.SingleActivity"
             android:label="@string/single_activity_title"/>
 
-        <activity android:name=".second.SecondActivity"
-            android:label="@string/second_activity_title"/>
+        <activity android:name=".single_fragment.SingleFragmentActivity"
+            android:label="@string/single_fragment_activity_title"/>
 
-        <activity android:name=".third.ThirdActivity"
-            android:label="@string/third_activity_title"/>
+        <activity android:name=".fragment_navigation.FragmentNavigationActivity"
+            android:label="@string/fragment_navigation_activity_title"/>
 
-        <activity android:name=".nested_viewpager.FourthActivity"
-            android:label="@string/fourth_activity_title"/>
+        <activity android:name=".nested_viewpager.NestedViewPagerActivity"
+            android:label="@string/nested_viewpager_activity_title"/>
     </application>
 
 </manifest>

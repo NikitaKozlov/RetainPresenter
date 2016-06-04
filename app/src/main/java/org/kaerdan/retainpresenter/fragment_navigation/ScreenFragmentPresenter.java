@@ -1,14 +1,14 @@
-package org.kaerdan.retainpresenter.third;
+package org.kaerdan.retainpresenter.fragment_navigation;
 
 import org.kaerdan.retainpresenter.LogPresenter;
 
-public class ThirdFragmentPresenter extends LogPresenter<ThirdFragmentContract.View>
-        implements ThirdFragmentContract.Presenter {
+public class ScreenFragmentPresenter extends LogPresenter<ScreenFragmentContract.View>
+        implements ScreenFragmentContract.Presenter {
 
     private View view;
 
     @Override
-    public void onAttachView(ThirdFragmentContract.View view) {
+    public void onAttachView(ScreenFragmentContract.View view) {
         super.onAttachView(view);
         this.view = view;
     }

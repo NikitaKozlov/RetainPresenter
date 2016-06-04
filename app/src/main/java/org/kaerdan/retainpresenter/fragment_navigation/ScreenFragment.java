@@ -1,4 +1,4 @@
-package org.kaerdan.retainpresenter.second;
+package org.kaerdan.retainpresenter.fragment_navigation;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -12,8 +12,8 @@ import org.kaerdan.retainpresenter.R;
 
 import java.util.Random;
 
-public class SecondFragment extends PresenterFragment<SecondFragmentPresenter, SecondFragmentContract.View>
-        implements SecondFragmentContract.View {
+public class ScreenFragment extends PresenterFragment<ScreenFragmentPresenter, ScreenFragmentContract.View>
+        implements ScreenFragmentContract.View {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,12 +34,12 @@ public class SecondFragment extends PresenterFragment<SecondFragmentPresenter, S
     }
 
     @Override
-    protected SecondFragmentPresenter onCreatePresenter() {
-        return new SecondFragmentPresenter();
+    protected ScreenFragmentPresenter onCreatePresenter() {
+        return new ScreenFragmentPresenter();
     }
 
     @Override
-    protected SecondFragment getPresenterView() {
+    protected ScreenFragment getPresenterView() {
         return this;
     }
 }

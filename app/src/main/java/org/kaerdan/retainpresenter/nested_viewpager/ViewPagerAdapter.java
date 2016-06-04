@@ -4,11 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-public class NestedFragmentAdapter extends FragmentStatePagerAdapter {
+public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private final int pageCount;
 
-    public NestedFragmentAdapter(FragmentManager fm, int pageCount) {
+    public ViewPagerAdapter(FragmentManager fm, int pageCount) {
         super(fm);
         this.pageCount = pageCount;
     }

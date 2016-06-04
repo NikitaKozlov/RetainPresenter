@@ -1,14 +1,12 @@
-package org.kaerdan.retainpresenter.third;
+package org.kaerdan.retainpresenter.single_fragment;
 
-public interface ThirdContract {
+public interface SingleFragmentActivityContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {
         void onPreviousClick();
         void onNextClick();
-        void onReplace();
     }
 
     interface View extends org.kaerdan.presenterretainer.Presenter.View {
         void launchActivity(Class<?> cls);
-        void replaceContentFragment();
     }
 }

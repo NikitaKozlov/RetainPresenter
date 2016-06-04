@@ -1,6 +1,6 @@
 package org.kaerdan.retainpresenter.nested_viewpager;
 
-public interface FourthContract {
+public interface NestedViewPagerActivityContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {
         void onPreviousClick();
     }

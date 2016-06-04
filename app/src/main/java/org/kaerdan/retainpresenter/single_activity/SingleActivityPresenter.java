@@ -1,7 +1,7 @@
 package org.kaerdan.retainpresenter.single_activity;
 
 import org.kaerdan.retainpresenter.LogPresenter;
-import org.kaerdan.retainpresenter.second.SecondActivity;
+import org.kaerdan.retainpresenter.single_fragment.SingleFragmentActivity;
 
 public class SingleActivityPresenter extends LogPresenter<SingleActivityContract.View>
         implements SingleActivityContract.Presenter {
@@ -27,6 +27,6 @@ public class SingleActivityPresenter extends LogPresenter<SingleActivityContract
 
     @Override
     public void onNextClick() {
-        view.launchActivity(SecondActivity.class);
+        view.launchActivity(SingleFragmentActivity.class);
     }
 }

@@ -1,6 +1,6 @@
-package org.kaerdan.retainpresenter.second;
+package org.kaerdan.retainpresenter.fragment_navigation;
 
-public interface SecondFragmentContract {
+public interface ScreenFragmentContract {
     interface Presenter extends org.kaerdan.presenterretainer.Presenter<View> {
     }
 

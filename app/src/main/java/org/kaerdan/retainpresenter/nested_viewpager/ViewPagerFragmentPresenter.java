@@ -2,15 +2,15 @@ package org.kaerdan.retainpresenter.nested_viewpager;
 
 import org.kaerdan.retainpresenter.LogPresenter;
 
-public class FourthFragmentPresenter extends LogPresenter<FourthFragmentContract.View>
-        implements FourthFragmentContract.Presenter {
+public class ViewPagerFragmentPresenter extends LogPresenter<ViewPagerFragmentContract.View>
+        implements ViewPagerFragmentContract.Presenter {
 
     private static final int PAGE_COUNT = 10;
 
     private View view;
 
     @Override
-    public void onAttachView(FourthFragmentContract.View view) {
+    public void onAttachView(ViewPagerFragmentContract.View view) {
         super.onAttachView(view);
         this.view = view;
         view.showContent(PAGE_COUNT);

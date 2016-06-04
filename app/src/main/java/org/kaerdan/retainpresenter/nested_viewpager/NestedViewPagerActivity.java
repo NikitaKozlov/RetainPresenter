@@ -1,14 +1,15 @@
-package org.kaerdan.retainpresenter.second;
+package org.kaerdan.retainpresenter.nested_viewpager;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import org.kaerdan.presenterretainer.PresenterActivity;
 import org.kaerdan.retainpresenter.R;
 
-public class SecondActivity extends PresenterActivity<SecondActivityPresenter, SecondContract.View>
-    implements SecondContract.View {
+public class NestedViewPagerActivity extends PresenterActivity<NestedViewPagerActivityPresenter,
+        NestedViewPagerActivityContract.View> implements NestedViewPagerActivityContract.View {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,9 +18,15 @@ public class SecondActivity extends PresenterActivity<SecondActivityPresenter, S
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(new SecondFragment(), null)
+                    .add(R.id.content, new ViewPagerFragment(), null)
                     .commit();
         }
+
+        initViews();
+    }
+
+    private void initViews() {
+        ((TextView) findViewById(R.id.description)).setText(R.string.nested_viewpager_activity_description);
 
         findViewById(R.id.previous).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,12 +35,7 @@ public class SecondActivity extends PresenterActivity<SecondActivityPresenter, S
             }
         });
 
-        findViewById(R.id.next).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getPresenter().onNextClick();
-            }
-        });
+        findViewById(R.id.next).setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -42,12 +44,12 @@ public class SecondActivity extends PresenterActivity<SecondActivityPresenter, S
     }
 
     @Override
-    protected SecondActivityPresenter onCreatePresenter() {
-        return new SecondActivityPresenter();
+    protected NestedViewPagerActivityPresenter onCreatePresenter() {
+        return new NestedViewPagerActivityPresenter();
     }
 
     @Override
-    protected SecondContract.View getPresenterView() {
+    protected NestedViewPagerActivityContract.View getPresenterView() {
         return this;
     }
 

@@ -1,16 +1,16 @@
-package org.kaerdan.retainpresenter.second;
+package org.kaerdan.retainpresenter.single_fragment;
 
 import org.kaerdan.retainpresenter.LogPresenter;
 import org.kaerdan.retainpresenter.single_activity.SingleActivity;
-import org.kaerdan.retainpresenter.third.ThirdActivity;
+import org.kaerdan.retainpresenter.fragment_navigation.FragmentNavigationActivity;
 
-public class SecondActivityPresenter extends LogPresenter<SecondContract.View>
-        implements SecondContract.Presenter {
+public class SingleFragmentActivityPresenter extends LogPresenter<SingleFragmentActivityContract.View>
+        implements SingleFragmentActivityContract.Presenter {
 
-    private SecondContract.View view;
+    private SingleFragmentActivityContract.View view;
 
     @Override
-    public void onAttachView(SecondContract.View view) {
+    public void onAttachView(SingleFragmentActivityContract.View view) {
         super.onAttachView(view);
         this.view = view;
     }
@@ -33,6 +33,6 @@ public class SecondActivityPresenter extends LogPresenter<SecondContract.View>
 
     @Override
     public void onNextClick() {
-        view.launchActivity(ThirdActivity.class);
+        view.launchActivity(FragmentNavigationActivity.class);
     }
 }
