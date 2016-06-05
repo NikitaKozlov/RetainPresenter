@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 
 public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View> extends AppCompatActivity {
 
-    private boolean mRetained;
-
     private PresenterManager<P> mPresenterManager;
 
     /**
@@ -76,7 +74,6 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
     protected void onStart() {
         super.onStart();
         attachViewToPresenter();
-        mRetained = false;
     }
 
     private void attachViewToPresenter() {
@@ -116,10 +113,7 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
-        if (!mRetained) {
-            mPresenterManager.destroyAllPresenters();
-        } else if (!retainPresenter()) {
+        if (!retainPresenter() || !isChangingConfigurations()) {
             P presenter = getPresenter();
             if (presenter != null) {
                 mPresenterManager.setHostPresenter(null);
@@ -132,7 +126,6 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
     public Object onRetainCustomNonConfigurationInstance() {
         NonConfigurationInstances<P> nci = new NonConfigurationInstances<>();
 
-        mRetained = true;
         nci.presenterManager = mPresenterManager;
 
         nci.custom = onRetainCustomNonConfigurationObject();

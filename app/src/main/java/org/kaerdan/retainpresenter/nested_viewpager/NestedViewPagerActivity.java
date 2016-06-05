@@ -39,11 +39,6 @@ public class NestedViewPagerActivity extends PresenterActivity<NestedViewPagerAc
     }
 
     @Override
-    protected boolean retainPresenter() {
-        return false;
-    }
-
-    @Override
     protected NestedViewPagerActivityPresenter onCreatePresenter() {
         return new NestedViewPagerActivityPresenter();
     }

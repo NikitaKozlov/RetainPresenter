@@ -33,7 +33,7 @@ __NB__ Activity which holds `PresenterFragment` __must__ extends `PresenterActiv
 
 ```groovy
 dependencies {
-    compile 'org.kaerdan.presenterretainer:presenterretainer:0.1.1'
+    compile 'org.kaerdan.presenterretainer:presenterretainer:0.1.3'
 }
 ```
 
