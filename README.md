@@ -3,8 +3,10 @@
 Library for retaining Presenter on configuration change with minimal overhead. 
 In case you don't know what Presenter is check [MVP](https://en.wikipedia.org/wiki/Model–view–presenter).
 
+If you are interesting how it works inside please check [this artcile](https://medium.com/@nikita.kozlov/retaining-presenter-on-configuration-change-with-minimal-overhead-e3d6d23ba851#.98nm8erc7).
+
 ## Example
-You can find an example in `app` module. They you can find following cases:
+You can find an example in `app` module. There you can find following cases:
 
 1. *Single Activity*: Retaining presenter for activity without fragments.
 2. *Activity with Fragment*: Retaining presenter for activity and fragment inside.
