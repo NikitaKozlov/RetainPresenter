@@ -1,9 +1,9 @@
 # Presenter Retainer
 
 Library for retaining Presenter on configuration change with minimal overhead. 
-In case you don't know what Presenter is check [MVP](https://en.wikipedia.org/wiki/Model–view–presenter).
+In case you don't know what Presenter is, check [MVP](https://en.wikipedia.org/wiki/Model–view–presenter).
 
-If you are interesting how it works inside please check [this artcile](https://medium.com/@nikita.kozlov/retaining-presenter-on-configuration-change-with-minimal-overhead-e3d6d23ba851#.98nm8erc7).
+If you are interesting how it works inside, please, check [this artcile](https://medium.com/@nikita.kozlov/retaining-presenter-on-configuration-change-with-minimal-overhead-e3d6d23ba851#.98nm8erc7).
 
 ## Example
 You can find an example in `app` module. There you can find following cases:
@@ -35,7 +35,7 @@ __NB__ Activity which holds `PresenterFragment` __must__ extends `PresenterActiv
 
 ```groovy
 dependencies {
-    compile 'org.kaerdan.presenterretainer:presenterretainer:0.1.3'
+    compile 'org.kaerdan.presenterretainer:presenterretainer:0.1.4'
 }
 ```
 
