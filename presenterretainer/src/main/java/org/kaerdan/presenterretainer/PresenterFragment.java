@@ -7,7 +7,7 @@ import android.support.v4.app.Fragment;
 
 import java.util.UUID;
 
-public class PresenterFragment<P extends Presenter, V extends Presenter.View> extends Fragment {
+public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View> extends Fragment {
 
     private static final String PRESENTER_SAVE_UUID = "Presenter save uuid tag";
 
@@ -109,10 +109,10 @@ public class PresenterFragment<P extends Presenter, V extends Presenter.View> ex
         if (presenter != null && view != null) {
             presenter.onAttachView(view);
         } else if (presenter == null && view != null) {
+            throw new IllegalStateException("You provided a view, but didn't create presenter");
+        } else if (presenter != null) {
             throw new IllegalStateException("You created a presenter, but didn't provide a " +
                     "view for it");
-        } else if (presenter != null) {
-            throw new IllegalStateException("You provided a view, but didn't create presenter");
         }
     }
 
