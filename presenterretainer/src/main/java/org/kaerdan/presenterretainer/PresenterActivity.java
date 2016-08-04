@@ -21,7 +21,7 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
      * Called after presenter restored. Called before {@link #onCreate(Bundle)}.
      * View is not attached to presenter at this moment.
      */
-    protected void onPresenterRestored() {
+    protected void onPresenterRestored(P presenter) {
 
     }
 
@@ -66,7 +66,7 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
         if (mPresenterManager == null) {
             mPresenterManager = new PresenterManager<>();
         } else if (getPresenter() != null) {
-            onPresenterRestored();
+            onPresenterRestored(mPresenterManager.getHostPresenter());
         }
     }
 

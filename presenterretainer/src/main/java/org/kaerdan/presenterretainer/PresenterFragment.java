@@ -32,7 +32,7 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
      * Called after presenter restored. Called before {@link #onCreate(Bundle)}.
      * View is not attached to presenter at this moment.
      */
-    protected void onPresenterRestored() {
+    protected void onPresenterRestored(P presenter) {
 
     }
 
@@ -84,7 +84,7 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
             mPresenterUUID = (UUID) savedInstanceState.getSerializable(PRESENTER_SAVE_UUID);
             P presenter = getPresenter();
             if (presenter != null) {
-                onPresenterRestored();
+                onPresenterRestored(presenter);
             }
         }
     }
