@@ -15,6 +15,7 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
 
     private PresenterManager mPresenterManager;
 
+    private P mPresenter;
 
     /**
      * Provides presenter.
@@ -22,6 +23,9 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
      *         null otherwise.
      */
     protected P getPresenter() {
+        if (mPresenter != null) {
+            return mPresenter;
+        }
         if (mPresenterUUID != null) {
             return (P) mPresenterManager.getPresenter(mPresenterUUID);
         }
@@ -107,6 +111,7 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
         final V view = getPresenterView();
 
         if (presenter != null && view != null) {
+            mPresenter = presenter;
             presenter.onAttachView(view);
         } else if (presenter == null && view != null) {
             throw new IllegalStateException("You provided a view, but didn't create presenter");
@@ -151,5 +156,6 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
     public void onDetach() {
         super.onDetach();
         mPresenterManager = null;
+        mPresenter = null;
     }
 }
