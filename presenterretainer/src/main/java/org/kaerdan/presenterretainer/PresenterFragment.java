@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import java.util.UUID;
 
@@ -25,9 +26,9 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
     protected P getPresenter() {
         if (mPresenter != null) {
             return mPresenter;
-        }
-        if (mPresenterUUID != null) {
-            return (P) mPresenterManager.getPresenter(mPresenterUUID);
+        } else if (mPresenterManager != null && mPresenterUUID != null) {
+            mPresenter = (P) mPresenterManager.getPresenter(mPresenterUUID);
+            return mPresenter;
         }
         return null;
     }
@@ -74,6 +75,9 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
         super.onAttach(context);
         if (context instanceof PresenterActivity) {
             mPresenterManager = ((PresenterActivity) context).getPresenterManager();
+        } else if (retainPresenter()) {
+            Log.w(getClass().getSimpleName(), "Activity doesn't extends PresenterActivity, " +
+                    "Presenter won't be retained");
         }
     }
 
@@ -105,7 +109,9 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
 
         if (presenter == null) {
             presenter = onCreatePresenter();
-            mPresenterUUID = mPresenterManager.addPresenter(presenter);
+            if (mPresenterUUID != null) {
+                mPresenterUUID = mPresenterManager.addPresenter(presenter);
+            }
         }
 
         final V view = getPresenterView();
@@ -137,13 +143,19 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
     @Override
     public void onDestroy() {
         super.onDestroy();
-        if (!retainPresenter() || !getActivity().isChangingConfigurations()) {
+        if (!shouldRetainPresenter() || !getActivity().isChangingConfigurations()) {
             P presenter = getPresenter();
             if (presenter != null) {
-                mPresenterManager.removePresenter(mPresenterUUID);
+                if (mPresenterManager != null) {
+                    mPresenterManager.removePresenter(mPresenterUUID);
+                }
                 presenter.onDestroy();
             }
         }
+    }
+
+    private boolean shouldRetainPresenter() {
+        return mPresenterManager != null && retainPresenter();
     }
 
     @Override

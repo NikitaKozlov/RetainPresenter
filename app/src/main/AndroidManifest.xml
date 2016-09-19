@@ -30,6 +30,10 @@
         <activity android:name=".nested_viewpager.NestedViewPagerActivity"
             android:label="@string/nested_viewpager_activity_title"
             android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".appcompat_activity.SingleAppCompatActivity"
+            android:label="@string/single_fragment_activity_title"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

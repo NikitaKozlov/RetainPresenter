@@ -1,5 +1,6 @@
 package org.kaerdan.retainpresenter;
 
+import org.kaerdan.retainpresenter.appcompat_activity.SingleAppCompatActivity;
 import org.kaerdan.retainpresenter.single_activity.SingleActivity;
 import org.kaerdan.retainpresenter.nested_viewpager.NestedViewPagerActivity;
 import org.kaerdan.retainpresenter.single_fragment.SingleFragmentActivity;
@@ -13,10 +14,11 @@ public class MainPresenter extends LogPresenter<MainContract.View>
 
     private List<Integer> stringIdList = Arrays.asList(R.string.single_activity_title,
             R.string.single_fragment_activity_title, R.string.fragment_navigation_activity_title,
-            R.string.nested_viewpager_activity_title);
+            R.string.nested_viewpager_activity_title, R.string.single_app_compat_activity_title);
 
     private List<Class<?>> activityClsList = Arrays.<Class<?>>asList(SingleActivity.class,
-            SingleFragmentActivity.class, FragmentNavigationActivity.class, NestedViewPagerActivity.class);
+            SingleFragmentActivity.class, FragmentNavigationActivity.class, NestedViewPagerActivity.class,
+            SingleAppCompatActivity.class);
 
     private MainContract.View view;
 

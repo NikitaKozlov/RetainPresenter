@@ -29,4 +29,9 @@
         fragment with nested fragments inside viewpager. Nested fragments has random background color,
         to visualise page changes</string>
 
+    <string name="single_app_compat_activity_title">Single AppCompat Activity</string>
+    <string name="single_app_compat_activity_description">Example with ViewPager. Activity contains
+        fragment with nested fragments inside viewpager. Nested fragments has random background color,
+        to visualise page changes</string>
+
 </resources>
