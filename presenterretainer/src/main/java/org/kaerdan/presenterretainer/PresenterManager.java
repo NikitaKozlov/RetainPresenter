@@ -1,14 +1,14 @@
 package org.kaerdan.presenterretainer;
 
-import android.support.v4.util.SimpleArrayMap;
-
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 class PresenterManager<HP extends Presenter> {
 
     private HP mHostPresenter;
-    private SimpleArrayMap<UUID, Presenter> mPresenters =
-            new SimpleArrayMap<>();
+    private Map<UUID, Presenter> mPresenters =
+            new HashMap<>();
 
     void setHostPresenter(HP presenter) {
         this.mHostPresenter = presenter;

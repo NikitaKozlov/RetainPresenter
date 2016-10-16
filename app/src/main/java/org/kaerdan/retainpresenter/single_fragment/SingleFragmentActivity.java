@@ -44,11 +44,6 @@ public class SingleFragmentActivity extends PresenterActivity<SingleFragmentActi
     }
 
     @Override
-    protected boolean retainPresenter() {
-        return false;
-    }
-
-    @Override
     protected SingleFragmentActivityPresenter onCreatePresenter() {
         return new SingleFragmentActivityPresenter();
     }

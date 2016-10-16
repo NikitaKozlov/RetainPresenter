@@ -96,17 +96,16 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
     }
 
     private void attachViewToPresenter() {
-
         P presenter = getPresenter();
 
         if (presenter == null) {
             presenter = onCreatePresenter();
-            mPresenterUUID = mPresenterManager.addPresenter(presenter);
         }
 
         final V view = getPresenterView();
 
         if (presenter != null && view != null) {
+            mPresenterUUID = mPresenterManager.addPresenter(presenter);
             presenter.onAttachView(view);
         } else if (presenter == null && view != null) {
             throw new IllegalStateException("You provided a view, but didn't create presenter");
