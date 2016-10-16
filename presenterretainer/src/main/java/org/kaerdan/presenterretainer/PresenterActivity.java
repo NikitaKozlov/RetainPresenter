@@ -82,12 +82,12 @@ public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View>
 
         if (presenter == null) {
             presenter = onCreatePresenter();
-            mPresenterManager.setHostPresenter(presenter);
         }
 
         final V view = getPresenterView();
 
         if (presenter != null && view != null) {
+            mPresenterManager.setHostPresenter(presenter);
             presenter.onAttachView(view);
         } else if (presenter == null && view != null) {
             throw new IllegalStateException("You created a view, but didn't provide a " +
