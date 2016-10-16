@@ -96,7 +96,6 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
     }
 
     private void attachViewToPresenter() {
-
         P presenter = getPresenter();
 
         if (presenter == null) {
