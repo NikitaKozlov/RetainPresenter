@@ -105,7 +105,8 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
         final V view = getPresenterView();
 
         if (presenter != null && view != null) {
-            mPresenterUUID = mPresenterManager.addPresenter(presenter);
+            if(mPresenterManager != null)
+                mPresenterUUID = mPresenterManager.addPresenter(presenter);
             presenter.onAttachView(view);
         } else if (presenter == null && view != null) {
             throw new IllegalStateException("You provided a view, but didn't create presenter");
@@ -134,7 +135,8 @@ public class PresenterFragment<P extends Presenter<V>, V extends Presenter.View>
         if (!retainPresenter() || !getActivity().isChangingConfigurations()) {
             P presenter = getPresenter();
             if (presenter != null) {
-                mPresenterManager.removePresenter(mPresenterUUID);
+                if(mPresenterManager != null)
+                    mPresenterManager.removePresenter(mPresenterUUID);
                 presenter.onDestroy();
             }
         }
