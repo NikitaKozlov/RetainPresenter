@@ -1,8 +1,8 @@
 package org.kaerdan.presenterretainer;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class PresenterActivity<P extends Presenter<V>, V extends Presenter.View> extends AppCompatActivity {
 

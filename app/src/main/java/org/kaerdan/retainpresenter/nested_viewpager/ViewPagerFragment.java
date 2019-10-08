@@ -1,7 +1,7 @@
 package org.kaerdan.retainpresenter.nested_viewpager;
 
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
