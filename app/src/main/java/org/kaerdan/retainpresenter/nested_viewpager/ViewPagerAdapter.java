@@ -9,7 +9,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     private final int pageCount;
 
     public ViewPagerAdapter(FragmentManager fm, int pageCount) {
-        super(fm);
+        super(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         this.pageCount = pageCount;
     }
 
